@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Every tag!!!</title>
+</head>
+<body>
+	TEST_REF2<br>
+	<a href="../test_anchor.html">이전(test_anchor)</a>
+	<h4>목차</h4>
+	<a herf="#Pont">폰트</a><br>
+	<a herf="#List">목록(ul/li/ol)</a><br>
+	<a herf="#Table">테이블</a><br>
+	<hr size = "3" color = "black">
+	
+	<!-- 여러가지 글씨 표현 태그 -->
+	<h1><b>굵게</b></h1>
+	<h1><i>기울게</i></h1>
+	<h1><small>작게</small></h1>
+	<h1>보통크기 <sub>아래쪽 작은크기</sub></h1>
+	<h1>보통크기 <sup>위쪽 작은크기</sup></h1>
+	<h1><ins>밑줄</ins></h1>
+	<h1><del>취소선</del></h1>
+	<hr>
+	<b>굵게</b><br>
+	<i>기울게</i><br>
+	<small>작게</small><br>
+	보통크기 <sub>아래쪽</sub><br>
+	보통크기 <sup>위쪽</sub><br>
+	<ins>밑줄</ins><br>
+	<del>취소선</del><br>
+	<hr size = "3" color = "black">
+	
+	
+	<!-- 목록 태그 -->
+	<ul type = "disc/circle/square">
+		<li>사과</li>
+			<ul type = "square">
+			<li>apple</li>
+			</ul>
+		<li>바나나</li>
+		<li>오렌지</li>
+	</ul>
+	
+	<ol type = "1/a/A/i/I">
+		<li>사과</li>
+		<li>바나나</li>
+		<li>오렌지</li>
+	</ol>
+	<hr size = "3" color = "black">
+	
+	
+	<!-- Table 태그 -->
+	<h1 id="Table">Table</h1>
+	<table border = "3" cellpadding = "10px" cellspacing = "5px">
+	<!--border : 테두리 
+		padding : 셀 내부 여백
+		margin : 셀 외부 여백
+		spacing : 외곽선 -->
+		<tr>
+			<td width = "50px">1</td>
+			<td width = "100px">2</td>
+			<td width = "200px">3</td>
+			<td width = "400px">4</td>
+		</tr>
+		<tr>
+			<td bgcolor = "red">1</td>
+			<td bgcolor = "orange">2</td>
+			<td bgcolor = "yellow">3</td>
+			<td bgcolor = "green">4</td>
+		</tr>
+		<tr>
+			<td height = "50px">1</td>
+			<td>2</td>
+			<td rowspan = "2">3</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td colspan = "2">1</td>
+			<td>4</td>
+		</tr>
+	<br>
+	
+	</table>
+	
+	<h3>&lt table 예제 &gt</table></h3>
+	<table border = "2">
+		<tr>
+			<th colspan = "2">지역별 홍차</th>
+		</tr>
+		<tr>
+			<th rowspan = "3">중국</th>
+			<td>정산소</td>
+		</tr>
+		<tr>
+			<td>기문</td>
+		</tr>
+		<tr>
+			<td>운남</td>
+		</tr>
+		<tr>
+			<th rowspan = "4">인도 및 스리랑카</th>
+			<td>아삼</td>
+		</tr>
+		<tr>
+			<td>실론</td>
+		</tr>
+		<tr>
+			<td>다질링</td>
+		</tr>
+		<tr>
+			<td>닐기리</td>
+		</tr>
+	</table>
+	<hr size = "3" color = "black">
+	
+	
+	<!-- 이미지 삽입 -->
+	<img src = "../daum.png" alt = "다음" width = "300px" height = "300px"><br>
+	
+	
+	<!-- 멀티미디어 삽입 -->
+	<audio src="../Kalimba.mp3" controls="controls"></audio><br>
+	<audio controls="controls">
+		<source src="../Kalimba.mp3" type="audio/mp3">
+		<source src="../Kalimba.ogg" type="audio/ogg">
+	</audio>
+	<hr>
+	<video controls="controls">
+		<source src="../Wildlife.mp4" type="video/mp4">
+		<source src="../Wildlife.webm" type="video/webm">
+	</video>
+	<hr size = "3" color = "black">
+	
+	
+	<!-- 입력 양식 태그 -->
+	<!-- client -> server 요청할때 get/post 방식 
+		노출되면 안될 데이터는 get으로 하면 안된다
+	-->
+	<form name="" action="test.jsp" enctype="multipart/form-data" method="get/post">
+		<!-- 사용자가 입력하는 입력 양식 -->
+		<input type="text" name="text" value="text data" /><br>
+		<input type="password" name="password" value="123456"><br>
+		<input type="file" name="file" value="file"><br>
+		<input type="checkbox" name="hobby" value="등산">등산
+		<input type="checkbox" name="hobby" value="독서">독서
+		<input type="checkbox" name="hobby" value="음악">음악<br>
+		<input type="radio" name="남자" value="male">남자
+		<input type="radio" name="여자" value="female">여자<br>
+		
+		<!-- 보이지 않는 입력 양식 -->
+		<input type="hidden" name="hidden" value="hidden"><br>
+		
+		<!-- 버튼 -->
+		<input type="button" value="button"><br>
+		<input type="reset" value="reset"><br>
+		<input type="submit" value="submit"><br>
+		<input type="image" src="../daum.png"><br>
+	</form>
+	<hr>
+	
+	<form>
+		<table>
+			<tr>
+				<td><label for="username">이름</label></td>
+				<td><input id="username" type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td>
+					<input id="man" type="radio" name="gender" vlaue="m">
+					<label for="man">남자</label>
+					<input id="woman" type="radio" name="gender" vlaue="w">
+					<label for="woman">여자</label>
+				</td>
+			</tr>
+			<tr align="center">
+				<td colspan="2">
+					<input type="submit" value="가입">
+				</td>
+			</tr>
+		</table>
+	</form>
+	<hr>
+	
+	<form>
+	<!-- multiple : 여러개 선택 가능(cntl) -->
+	<!-- size : 표시되는 개수(나머지는 스크롤) -->
+		<select multiple size="4">
+			<option>김밥</option>
+			<option>떡볶이</option>
+			<option>순대</option>
+			<option>어묵</option>
+			<option>튀김</option>
+			<option>음료수</option>
+		</select>
+		
+		<select>
+		<!-- optgroup 태그 : 그룹화 -->
+			<optgroup label="HTML5">
+				<option>Multimedia Tag</option>
+				<option>Connectivity</option>
+				<option>Device Access</option>
+			</optgroup>
+			<optgroup label="CSS3">
+				<option>Animation</option>
+				<option>3D Transform</option>
+			</optgroup>
+		</select>
+	</form>
+	<hr>
+	
+	<form>
+		<fieldset>
+			<legend>입력 양식</legend>
+			<table>
+				<tr>
+					<td><label for="name">이름</label></td>
+					<td><input id="name" type="text"></td>
+				</tr>
+				<tr>
+					<td><label for="mail">이메일</label></td>
+					<td><input id="mail" type="email"></td>
+			</table>
+			<input type="submit">
+		</fieldset>
+	</form>
+	<hr>
+	
+	<form>
+		학과 : <input type="text" name="st_department" list="depList">
+		<datalist id="depList">
+			<option value="컴퓨터공학과"></option>
+			<option value="영어영문학과"></option>
+			<option value="경형학과"></option>
+			<option value="사회체육과"></option>
+		</datalist><br>
+		숫자 <input type="number" name="point" min="0" max="100" step="10" value="30"><br>
+		날짜 <input type="date" name="bday"><br>
+		색상<input type="color" name="favcolor"><br>
+		범위 <input type="range" name="point" min="0" max="10"><br>
+		날짜 및 시간<input type="datetime-local" name="bdaytime"><br>
+		이메일 <input type="email" name="email"><br>
+		검색 <input type="search" name="googlesearch"><br>
+		전화번호 <input type="tel" name="usertel"><br>
+		사이트 <input type="url" name="homepage"><br>
+	</form>
+	<hr size = "3" color = "black">
+	
+	
+	<!-- dev & span 태그 -->
+	<div>block 형식</div>
+	<div>block 형식</div>
+	<div>block 형식</div>
+	<span>inline 형식</span>
+	<span>inline 형식</span>
+	<span>inline 형식</span>
+	
+	
+	<!-- 시멘틱 태그 -->
+	
+</body>
+</html>
