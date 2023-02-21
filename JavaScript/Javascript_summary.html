@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript</title>
+<script>
+//	alert('Hello javascript')	// 알림창 팝업
+//	document.write('Hello javascript');	//document: window의 하위 객체.
+
+/* 	var a = 10;
+	document.write('a=' + a + a);	// a = 1010 */
+	
+/* 	const a = 10000;
+	document.write('a =' + a);
+	console.log('a =' + a); */
+	
+/* 	document.write(10 + 20);
+	document.write("10" + 20); */
+	
+/* 	var radius = 10;
+	var pi = 3.141592;
+	alert(2 * radius * pi);
+	console.log(2 * radius * pi);
+	document.write(2 * radius * pi); */
+	
+/* 	var date = new Date();
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	var day = date.getDate();
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	var seconds = date.getSeconds();
+	var str = year + "년" + month + "월" + day + "일";
+	document.write(str); */
+	
+/* 	var array = ['가', '나', '다', '라'];	// 배열의 생성 방법 3가지
+	var array = Array('가', '나', '다', '라');
+	var array = new Array('가', '나', '다', '라');	// 배열의 타입이 달라도 된다.
+	document.write(array[0] + "<br>");	// 배열의 요소 출력
+	document.write(array[1] + "<br>");
+	document.write(array[2] + "<br>");
+	document.write(array[3] + "<br>");
+	document.write(array.length + "<br>");	//배열의 길이 */
+	
+/* 	var i = 0;
+	var array = ['가', '나', '다'];
+	while (i < array.length) {		// while문
+		alert (i+1 + '번째 출력: ' + array[i]);
+		i++;
+	} */
+	
+/* 	var array = ['가', '나', '다'];
+	for (var i=0; i>3; i++) {
+		alert(i + '번째 출력: ' + array[i]);
+	} */
+	
+
+/***	1. 함수		*************************************************/
+/* 	function sum1(a, b) {	// 선언적 함수
+		return a + b;
+	}
+	const sum2 = function (a, b) {	// 익명 함수
+		return a + b;
+	}
+	const sum3 = (a, b) => {	// 화살표 함수
+		return a + b;
+	} */
+
+	
+/* 	function callTenTimes(callback) {
+		for (var i=0; i<10; i++) {
+			callback();
+		}
+	}
+//	var callback = function() {
+//		alert("함수 호출");
+//	}
+	
+//	callTenTimes(callback);
+	callTenTime(function () {	// 익명함수의 활용 예
+		alert('함수 호출');
+	}); */
+	
+/*******  객체  ***************************************************/	
+/* 	var product = {
+			제품명: '7D 건조 망고',
+			유형 : '당절임',
+			성분 : '망고, 설탕, 메타중아황산나트륨, 치자황색소',
+			원산지 : '필리핀'
+	};
+	for (var i in product) {
+		alert(i + ':' + product[i]);
+	} */
+	
+/* 	var person = {
+			name: '윤인성',
+			eat: function (food) {
+				alert(this.name + '이' + food + '을/를 먹습니다.');
+			}
+	};
+	person.eat('밥');
+	alert(person.name);
+	alert(person["name"]); */
+	
+	
+	
+</script>
+</head>
+<body>
+<script>
+// 1. 함수
+/* 	document.write(sum1(10, 20) + "<br>");
+	document.write(sum2(10, 20) + "<br>");
+	document.write(sum3(10, 20) + "<br>"); */
+	
+	
+// let, var 변수	
+/* 	var num = 10;	//전역 변수 num을 선언함.
+	function globalNum() {
+		document.write("함수 내부에서 변수 num의 값은 " + num + "입니다.<br>");
+		{
+		let num = 20;	// 전역 변수 num의 값을 함수 내부에서 변경함.
+		document.write("함수 내부에서 변수 num의 값은 " + num + "입니다.<br>");
+		}
+	}
+	globalNum();	// 함수 globalNum()을 호출함.
+	document.write("함수의 호출이 끝난 뒤 변수 num의 값은 " + num + "입니다.<br>"); */
+	
+	
+// Number 객체
+/* 	document.write(Number.parseFloat("12") + "<br>");		// 12
+	document.write(Number.parseFloat("12.34") + "<br>");	// 12.34
+	document.write(Number.parseFloat("12문자열") + "<br>");	// 12
+	document.write(Number.parseFloat("12 34 56") + "<br>");	// 12
+	document.write(Number.parseFloat("문자열 56") + "<br>");	// NaN
+	
+	document.write(parseFloat("12") + "<br>");				// 12
+	document.write(parseFloat("12.34") + "<br>");	// 12.34
+	document.write(parseFloat("12문자열") + "<br>");	// 12
+	document.write(parseFloat("12 34 56") + "<br>");	// 12
+	document.write(parseFloat("문자열 56") + "<br>");	// NaN */
+	
+
+// Math 객체
+/* 	document.write(Math.min(1, 10, -100, -10, 1000, 0) + "<br>");	//-100
+	document.write(Math.max(1, 10, -100, -10, 1000, 0) + "<br>");	//1000
+	document.write(Math.round(10.49) + "<br>");		// 10
+	document.write(Math.round(10.5) + "<br>");		// 11
+	document.write(Math.round(-10.5) + "<br>");		// -10
+	document.write(Math.round(-10.51) + "<br>");	// -11
+	document.write(Math.floor(10.95) + "<br>");		// 10 floor : 무조건 내림
+	document.write(Math.floor(11.01) + "<br>");		// 11
+	document.write(Math.floor(-10.95) + "<br>");	// -11
+	document.write(Math.floor(-11.01) + "<br>");	// -12
+	document.write(Math.ceil(10.95) + "<br>");		// 11	ceil : 무조건 올림
+	document.write(Math.ceil(11.01) + "<br>");		// 12
+	document.write(Math.ceil(-10.95) + "<br>");		// -10
+	document.write(Math.ceil(-11.01) + "<br>");		// -11 */
+	
+	
+// Date 객체
+/* 	document.write(new Date() + "<br>");
+	document.write(new Date(2016, 5, 25) + "<br>");
+	
+	var date = new Date();
+	var days = ["일", "월", "화", "수", "목", "금", "토"];
+	document.write("오늘은 " + days[date.getDay()] + "요일입니다."); */
+	
+// Array 객체
+/* 	function arrayFrom() {
+		return Array.from(arguments);
+	}
+	document.write(Array.from(arrayFrom(1,2,3)) + "<br>");
+	var myMap = new Map([[1, 2], [3, 4]]);
+	document.write(Array.from(myMap) + "<br>");
+	document.write(Array.from("JavaScript")); */
+	
+	
+// push 메소드
+/* 	var arr = [1, true, "JavaScript"];
+	
+	document.write("push() : 하나 이상의 요소를 배열의 가장 마지막에 추가하고, 배열의 총 길이를 반환함." + "<br>");
+	document.write(arr.length + "<br>");
+	arr.push("자바스크립트");
+	document.write(arr.length + "<br>");
+	document.write(arr + "<br><br>");
+	
+	arr.push(2, "거짓");
+	document.write(arr.length + "<br>");
+	document.write(arr); */
+	
+// pop 메소드
+/* 	var arr = [1, true, "JavaScript"];
+	
+	document.write("pop() : 배열의 가장 마지막 요소를 제거하고, 그 제거된 요소를 반환함." + "<br>");
+	document.write(arr.length + "<br>");
+	document.write(arr.pop() + "<br>");
+	document.write(arr.length + "<br>");
+	document.write(arr.pop() + "<br>");
+	document.write(arr.length + "<br>");
+	document.write(arr); */
+	
+// shift 메소드
+/* 	var arr = [1, true, "JavaScript"];
+	
+	document.write("shift() : 배열의 가장 첫 요소를 제거하고, 그 제거된 요소를 반환함." + "<br>");
+	document.write(arr.length + "<br>");
+	document.write(arr.shift() + "<br>");
+	document.write(arr.length + "<br>");
+	document.write(arr.pop() + "<br>");
+	document.write(arr.length + "<br>");
+	document.write(arr); */
+	
+// unshift 메소드
+/* 	var arr = [1, true, "JavaScript"];
+	
+	document.write("하나 이상의 요소를 배열의 가장 앞에 추가하고, 배열의 총 길이를 반환함." + "<br>");
+	document.write(arr.length + "<br>");
+	arr.unshift("자바스크립트");
+	document.write(arr.length + "<br>");
+	document.write(arr + "<br><br>");
+	
+	arr.unshift(2, "거짓");
+	document.write(arr.length + "<br>");
+	document.write(arr); */
+	
+// reverse(), sort() 메소드
+/* 	var arr = [1, true, "JavaScript", "자바스크립트"];
+	document.write("배열 요소의 순서를 전부 반대로 교체함." + "<br>");
+	document.write(arr.reverse() + "<br>");
+	
+	var strArr = ["로마", "나라", "감자", "다람쥐"];
+	var numArr = [10, 21, 1, 2, 3];
+	
+	document.write("해당 배열의 배열 요소들을 알파벳 순서에 따라 정렬함." + "<br>");
+	document.write(strArr.sort() + "<br>");
+	document.write(numArr.sort()); */
+	
+// splice() 메소드
+/* 	var arr = [1, true, "JavaScript", "자바스크립트"];
+	
+	document.write("기존의 배열 요소를 제거하거나 새로운 배열 요소를 추가하여 배열의 내용을 변경함." + "<br>");
+	var removedElement = arr.splice(1, 2, false, "C언어");	// (삭제할 위치, 삭제할 데이터 갯수, 삽일할 데이터, 삽일할 데이터)
+	document.write(arr + "<br>");
+	document.write(removedElement); */
+	
+// String 객체
+/* 	var str = "JavaScript";
+	var strObj = new String("JavaScript");
+	
+	document.write(str + "<br>");				// "JavaScript"
+	document.write(strObj + "<br>");			// "JavaScript"
+	document.write(typeof str + "<br>");		// string
+	document.write(typeof strobj + "<br>")	;	// object
+	document.write((str == strObj) + "<br>");	// 값 비교: true
+	document.write((str === strObj) + "<br>");	// 값 & 타입 비교: flase */
+	
+// String 메소드
+/* 	var str = "abcDEFabc";
+	
+	document.write(str.indexOf('abc') + "<br>");
+	document.write(str.indexOf('abcd') + "<br>");
+	document.write(str.indexOf('abc', 3) + "<br><br>");
+	
+	document.write(str.lastIndexOf('abc') + "<br>");
+	document.write(str.lastIndexOf('d') + "<br>");
+	document.write(str.lastIndexOf('c') + "<br><br>");
+	
+	document.write(str.charAt(0) + "<br>");
+	document.write(str.slice(2, 6) + "<br>");
+	document.write(str.slice(-4, -2) + "<br>");
+	document.write(str.slice(2) + "<br>");
+	document.write(str.substring(2, 6) + "<br>");
+	document.write(str.substr(2, 4) + "<br><br>");
+	
+	var str2 = "자바스크립트는 너무 쉬워요! 그리고 유용해요.";
+	document.write(str2.split() + "<br>");
+	document.write(str2.split("") + "<br>");
+	document.write(str2.split(" ") + "<br>");
+	document.write(str2.split("!") + "<br>");
+	
+	var res = str2.split(" ");
+	for (let i=0; i<res.length; i++) {
+		document.write(res[i] + "<br>");
+	}
+	
+	var str3 = "자바스크립트";
+	document.write(str3.concat("는 너무 멋져요!") + "<br><br>");
+	
+	var str4 = "JavaScript";
+	document.write(str4.toUpperCase() + "<br>");
+	document.write(str4.toLowerCase() + "<br>");
+	
+	var str5 = "		JavaScript		";
+	document.write("##" + str5.trim() + "##"); */	
+</script>
+</body>
+</html>

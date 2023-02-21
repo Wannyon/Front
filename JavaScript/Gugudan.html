@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+// [문제] 임의의 두수를 입력받아 작은수에서 큰수까지 구구단 출력.
+
+	var num1 = parseInt(prompt("첫번째 숫자 입력"));	// 기본 문자열이므로 정수형으로 변환.
+	var num2 = parseInt(prompt("두번째 숫자 입력"));
+	
+	if (num1 < num2) {
+		min = num1;
+		max = num2;
+	}
+	else {
+		min = num1;
+		max = num2;
+	}
+	
+	document.write("<table border='1'>")
+	document.write("<tr>")
+	for (var i=min; i<=max; i++) {
+		document.write("<th width='60px'>" + i + "단" + "</th>");
+	}
+	document.write("</tr>");
+	for (let j=1; j<=9; j++) {	// let 지역변수
+		document.write("<tr>");
+		for (let i=min; i<=max; i++) {
+			document.write("<td>" + i + "*" + j + "=" + (i*j) + "</td>");
+		}
+		document.write("</tr>")
+	}
+	documet.write("</table>")
+	
+	//var gugudan = document.getElementById("text");
+	//gugudan.innerHTML = str;
+	
+</script>
+</body>
+</html>
