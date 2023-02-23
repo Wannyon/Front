@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript_summary_3</title>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<style>
+        /* #box {
+            width: 100px; height: 100px;
+            background-color: red;
+        }
+
+        #box.hover {
+            background-color: blue;
+            border-radius: 50px;
+        } */
+        
+        .container * {
+         display: block;
+         border: 1px solid lightgray;
+         padding: 5px;
+         margin: 15px;
+        }
+</style>
+<script>
+/*******일반 메서드 연결********************************************/
+    /* $(document).ready(function () {
+        $('#box').hover(function () {
+            // 스타일을 변경합니다.
+            $('#box').addClass('hover');
+        }, function () {
+            // 스타일을 변경합니다.
+            $('#box').removeClass('hover');
+        });
+    }); */
+    
+    /* $(document).ready(function() {
+    	// 스타일 변경 및 이벤트를 연결
+    	$('#box').css({
+    		width: 100,
+    		height: 100,
+    		background: 'orange'
+    	}).on('click', function () {
+    		$(this).css('background', 'red');
+    	}).on('mouseenter', function () {
+    		$(this).css('background', 'blue');
+    	}).on('mouseleave', function () {
+    		$(this).css('background', 'orange');
+    	})
+    }); */
+    
+    /* $(document).ready(function() {
+    	$('#box').css({
+    		width: 100,
+    		height: 100,
+    		background: 'orange'
+    	}).on({
+    		click: function () {
+    			$(this).css('background', 'red');
+    		},
+    		mouseenter: function () {
+    			$(this).css('background', 'blue');
+    		},
+    		mouseleave: function () {
+    			$(this).css('background', 'orange');
+    		}
+    	});
+    }); */
+    
+/*************************************************************/
+ 	/* function func() {
+ 		createElement();	// 아이디가 "para"인 HTML 요소를 생성함.
+		addAttribute();		// 아이디가 "para"인 HTML 요소에 속성을 추가함.
+	}
+	
+	function createElement() {
+		var criteriaNode = document.getElementById("text");
+		var newNode = document.createElement("p")
+		newNode.innerHTML = "새로운 단락입니다.";
+		newNode.setAttribute("id", "para");
+		document.body.insertBefore(newNode, criteriaNode);
+	}
+	function addAttribute() {
+		document. getElementById("para").setAttribute("style", "color: red");
+	} */
+ 
+	
+/*************************************************************/
+	// 이벤트를 연결합니다.
+   /*  $(document).ready(function () {
+        // 이벤트를 연결합니다.
+        $('h1').click(function () {
+            alert('클릭!');
+        });
+    }); */
+
+/*******복합 연결 메서드***************************************/
+	// 이벤트를 연결합니다.
+    /* $(document).ready(function () {
+        // 이벤트를 연결합니다.
+        $('h1').hover(function () {		// 마우스가 올라갔을 떄
+            // 색상을 변경합니다.
+            $(this).css({		
+                background: 'red',
+                color: 'white'
+            });
+        }, function () {	// 마우스가 벗어났을때
+            // 색상을 제거합니다.
+            $(this).css({
+                background: '',
+                color: ''
+            });
+        });
+    }); */
+
+    
+/*****기본 이벤트 제거********************************************/
+	// 이벤트를 연결합니다.
+    /* $(document).ready(function () {
+        // 이벤트를 연결합니다.
+        $('a').click(function (event) {
+            // 출력합니다.
+            alert('click');
+
+            // 기본 이벤트를 제거합니다.
+            event.preventDefault();
+        });
+    }); */
+   
+   /* $(function() {
+	   $("#clickBtn").on("click", function() {
+		   $("#text").append("버튼을 클릭했어요<br>");
+	   });
+	   $("#removeBtn").on("click", function() {
+		   $("#text").off("click");
+	   });
+   }) */
+   
+   
+/********태그가 사라졌다가 나타나는 효과************************************/
+	 // 이벤트를 연결합니다.
+     /* $(document).ready(function () {
+         // 이벤트를 연결합니다.
+         $('button').click(function () {
+             // 간단한 효과를 적용합니다.
+             $('.page').fadeToggle('slow');
+         });
+     }); */
+
+
+ /******애니메이션 효과***********************************************/
+ 	/* $(document).ready(function () {
+            // 스타일을 변경합니다.
+            $('#box1').css({
+                width: 100,
+                height: 100,
+                background: 'red'
+            }).animate({
+                width: 1200,
+                opacity: 0.5,
+            }, 10000);
+	});
+ 	
+     $(document).ready(function () {
+         // 변수를 선언합니다.
+         var clearQueue = false;
+         var goToEnd = false;
+
+         // 이벤트를 연결합니다.
+         $('#clearQueue').change(function () {
+             clearQueue = $(this).prop('checked')
+         });
+
+         $('#goToEnd').change(function () {
+             goToEnd = $(this).prop('checked');
+         });
+
+         $('#stopButton').click(function () {
+             $('#box2').stop(clearQueue, goToEnd);
+         });
+
+         // 스타일을 변경합니다.
+         $('#box2').css({
+             width: 100,
+             height: 100,
+             background: 'red'
+         })
+
+         // 타이머를 연결합니다.
+         setInterval(function () {
+             $('#box2').animate({
+                 width: 1200
+             }, 8000).delay(1000).animate({
+                 width: 100,
+                 height: 100
+             }, 5000);
+         }, 3000);	// 3초 간격으로 실행
+     }); */
+ 
+ 
+/********입력 양식 포커스 자동 설정*************************************/
+	/* window.onload = function () {
+	    // 문서 객체를 선택합니다.
+	    var input_1 = document.querySelectorAll('input')[0];
+	    var input_2 = document.querySelectorAll('input')[1];
+	    // input_1
+	    input_1.onkeydown = function () {
+	        // 글자 개수가 여섯 개 이상일 경우
+	        if (6 <= input_1.value.length) {
+	            // input_2 문서 객체로 초점을 이동합니다.
+	            input_2.focus();
+	        }
+	    };
+	    // input_2
+	    input_2.onkeydown = function (event) {
+	        // 이벤트 객체를 추출합니다.
+	        var event = event || window.event;
+	        // 사용자의 입력이 '백 스페이스'이고 입력된 글자가 없는 경우
+	        if (event.keyCode == 8 && input_2.value.length == 0) {
+	            input_1.focus();
+	        }
+	    };
+	}; */
+
+	
+/*********문서 객체 생성*********************************************/
+	/* // 1. 이벤트를 연결합니다.
+    $(document).ready(function () {
+        // 10회 반복합니다.
+        for (var i = 0; i < 10; i++) {
+            // 문서 객체를 생성합니다.
+            $('<h1>Create Document Object + ' + i + '</h1>').css({
+                backgroundColor: 'black',
+                color: 'white'  
+            }).appendTo('body');
+        }
+    });
+	
+	// 2. 이벤트를 연결합니다.
+    $(document).ready(function () {
+        // 10회 반복합니다.
+        for (var i = 0; i < 10; i++) {
+            // 문서 객체를 생성합니다.
+            var $dynamic = $('<h2>Create Document Object + ' + i + '</h2>').css({
+                    backgroundColor: 'black',
+                    color: 'red'
+                });
+            
+            // 문서 객체를 추가합니다.
+            $('body').append($dynamic);
+        }
+    }); */
+ 
+ 
+/*******무한 스크롤***********************************************/
+	// 이벤트를 연결합니다.
+	/* $(document).ready(function () {
+	    // 문서 객체 추가 함수
+	    var appendDocument = function () {
+	        for (var i = 0; i < 20; i++) {
+	            // 문서 객체를 생성합니다.
+	            $('<h1>Infinity Scroll</h1>').appendTo('body');
+	        }
+	    };
+	    // 초기에 문서 객체를 추가합니다.
+	    appendDocument();
+	    // 이벤트를 연결합니다.
+	    $(window).scroll(function () {
+	        // 변수를 선언합니다.
+	        var scrollHeight = $(window).scrollTop() + $(window).height();
+	        var documentHeight = $(document).height();
+	        // 검사합니다.
+	        if (scrollHeight == documentHeight) {
+	            appendDocument();
+	        }
+	    });
+	}); */
+ 
+
+/********slider 한 화면에 보여주기**************************************/
+	$(document).ready(function() {
+		// 변수를 선언합니다.
+		var width = $('[data-role="slider"]').attr('data-width');
+		var height = $('[data-role="slider"]').attr('data-height');
+		var count = $('[data-role="slider"] div.item').length;
+		
+		// 스타일을 적용합니다.
+		$('[data-role="slider"]').css({
+			position: 'relative',
+			overflow: 'hidden',
+			width: width,
+			height: height
+		}).find('.container').css({
+			position: 'absolute',
+			width: count * width,
+			overflow: 'hidden'
+		}).find('item').css({
+			width: width,
+			height: height,
+			float: 'left'
+		});	
+		
+		// 변수를 선언합니다.
+		var currentPage = 0;
+		var changePage = function () {
+			$('[data-role="slider"] > .container').animate({
+				left: -currentPage * width
+			}, 500);
+		};
+		
+		// 이벤트를 연결합니다.
+		$('#left-button').click(function () {
+			if (currentPage > 0) {
+				// 왼쪽으로 이동.
+				currentPage = currentPage - 1;
+				changePage();
+			}
+		});
+		$('#right-button').click(function() {
+			if(currentPage < count - 1) {
+				//오른쪽으로 이동.
+				currentPage = currentPage + 1;
+				changePage();
+			}
+		});
+	});
+ 
+
+/*****parent***********************************************/
+	$(function() {
+		$("#parent").on("click", function() {
+			$("p").parent()							// <p> 요소의 부모 요소를 선택.
+				.css({"border": "2px solid red"});	// 해당 요소의 CSS 스타일을 변경함.
+		});
+		$("#next").on("click", function() {
+			$("h1").parent()
+				.css({"border": "2px solid green"});
+		});
+		$("#children").on("click", function() {
+			$("ul").parent()
+				.css({"border": "2px solid blue"});
+		});
+		$("#first").on("click", function() {
+			$("li").parent()
+				.css({"border": "2px solid pink"});
+		});
+		$("#last").on("click", function() {
+			$("li").parent()
+				.css({"border": "2px solid orange"});
+		});
+	})
+ 
+
+/*************************************************************/
+/*************************************************************/
+      
+</script>
+</head>
+<body>
+	<div id="box"></div>
+	
+	
+	<h1>아직 생성되지 않은 HTML 요소에 속성 추가</h1>
+	
+	<button onclick="func()">속성추가!</button>
+	<p id="text"></p>
+	
+	
+	<h1>Click</h1>
+	
+	
+	<a href="http://hanb.co.kr">Hanbit Academy</a>
+	
+	
+	<h1>on(), off() 메소드</h1>
+	<button id="clickBtn">마우스를 클릭해 보세요!</button>
+	<button id="removeBtn">클릭 이벤트를 제거합니다!</button>
+	<p id="text"></p>
+	
+	
+	<button>Toggle Show</button>
+    <div class="page">
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    </div>
+    
+    
+    <div id="box1"></div>
+    
+    
+    <!-- 입력 양식 -->
+    <label>clearQueue</label>
+    <input id="clearQueue" type="checkbox">
+    <br>
+    <label>goToEnd</label>
+    <input id="goToEnd" type="checkbox">
+    <br>
+    <button id="stopButton">Stop</button>
+    <!-- 애니메이션 -->
+    <div id="box2"></div>
+    
+    
+    <input type="text" maxlength="6">
+    <span>-</span>
+    <input type="text" maxlength="7">
+    
+    
+    <div data-role="slider" data-width="500" data-height="300">
+    	<div class="container">
+    		<div class="item">
+    			<h1>Lorem ipsum dolor sit amet</h1>
+    			<p>Lorem ipsum dolor sit amet, consectetur</p>
+    		</div>
+    		<div class="item">
+    			<h1>Lorem ipsum dolor sit amet</h1>
+    			<p>Lorem ipsum dolor sit amet, consectetur</p>
+    		</div>
+    		<div class="item">
+    			<h1>Lorem ipsum dolor sit amet</h1>
+    			<p>Lorem ipsum dolor sit amet, consectetur</p>
+    		</div>
+    	</div>
+    </div>
+    <button id="left-button">&lt;</button>	<!-- less then -->
+    <button id="right-button">&gt;</button>	<!-- // greater then -->
+    
+    
+    <h1>제이쿼리 탐색 메소드</h1>
+    <div class="container">
+    	<div>div 요소
+    		<ul>ul 요소
+    			<li>li 요소</li>
+    			<li>li 요소
+					<p>p 요소 (기준)
+						<span>span 요소</span>
+					</p>
+    			</li>
+    			<li>li 요소</li>
+    		</ul>
+    	</div>		
+    </div>
+    
+    <button id="parent">p 요소의 부모 요소</button>
+    <button id="next">h1 요소의 형제 요소</button>
+    <button id="children">ul 요소의 자손 요소</button>
+    <button id="first">첫 번째 목록</button>
+    <button id="last">마지막 목록</button>
+    
+</body>
+</html>

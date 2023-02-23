@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>jQuery</title>
+<script src="http://code.jquery.com/jquery-3.6.3.js"></script>
+<script >
+	$(document).ready(function () {	// window.inload
+		alert("jQuery");
+	});
+	
+	
+	$(document).ready(function () {
+		// 속성을 추출합니다.
+		var src = $('script').attr('src');
+		
+		// 출력합니다.
+		alert(src);
+	});
+	
+	
+	$(document).ready(function () {
+		// 속성을 지정합니다.
+		$('img').attr('alt', 'jQuery 라이브러리를 사용한 속성 지정');
+		$('img').attr('src', '"../image/daum.png"/100x100');
+		$('img').attr('width', '100');
+	});
+	
+	
+	$(document).ready(function () {
+		// 속성을 지정합니다.
+		$('img').attr({
+			alt: 'jQuery 라이브러리를 사용한 속성 지정',
+			src: 'http://placehold.it/100x100',
+			width: 100
+		});
+	});
+	
+	
+	$(document).ready(function () {
+		// 속성을 지정합니다.
+		$('img').attr({
+			alt: 'jQuery 라이브러리를 사용한 속성 지정',
+			src: function(index) {
+				console.log("index : " + index);
+				// 변수를 선언합니다.
+				var size = (index + 1) * 100;
+				
+				// 리턴합니다.
+				return 'http://placehold.it/' + size + 'x100'
+			}
+		});
+	});
+	
+	
+	$(document).ready(function () {
+		// 스타일을 적용합니다.
+		$('.box').css('float', 'left');
+		$('.box').css('margin', 10);
+		$('.box').css('width', 100);
+		$('.box').css('height', 100);
+		$('.box').css('backgroundColor', 'red');
+	});
+	
+	
+	
+	$(document).ready(function () {
+		// 문서 객체를 추가합니다.
+		var output = '';
+		for (var i=0; i<256; i++) {
+			output += '<div><div>';
+		}
+		document.body.innerHTML = output;
+		
+		// 스타일을 적용합니다.
+		$('div').css({
+			hight: 2,
+			backgroundColor: function(i) {
+				return 'rgb(' + i + ',' + i +',' + i + ')';
+			}
+		});
+	});
+	
+	
+	$(document).ready(function () {
+		// 내부 글자를 변경합니다.
+		$('h1:nth=child(1)').text('<a href="#">text()</a>');
+		$('h1:nth=child(2)').text('<a href="#">text()</a>');
+	});
+	
+	
+	$(document).ready(function () {
+		var text = $('h1').text();
+		var html = $(h1).html();
+		
+		// 출력합니다.
+		alert("text: " + text);
+		alert("html: " + text);
+	});
+	
+	
+	$(document).ready(function () {
+		var text = $('div').text();
+		var html = $('div').html();
+		
+		// 출력합니다.
+		alert("text: " + text);
+		alert("html: " + text);
+		
+	});
+		
+		
+		
+</script>
+</head>
+<body>
+	<h1>Header - 0</h1>
+	<h1>Header - 1</h1>
+	
+	<div><span>Header - 0</span></div>
+</body>
+</html>

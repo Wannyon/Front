@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+	$(document).ready(function () {
+		$("#addbtn").click(function() {
+			var row = `<tr align='center'>
+				<td>${$('#name'). val()}</td>	// val 값 넣기
+				<td>${$('#score'). val()}</td>
+				<td><input type="button" class="delbtn" value="Del"></td>
+				</tr>`;
+			
+				$("#list").append(row);	// 값 입력 받아 출력
+				$("#name").val('');	// 입력 후 빈칸으로 리셋
+				$("#score").val('');	// 입력 후 빈칸으로 리셋
+		})
+		
+		$("#list").on("click", ".delbtn", function() {
+			$(this).parent().parent().remove();
+		});
+	})
+</script>
+</head>
+<body>
+	<div>
+	<form>
+		<table border="1" align="center">
+			<tr>
+				<td><input id="name" type="text" placeholder="이름입력" size="5" required autofocus></td>
+				<td><input id="score" type="text" placeholder="점수입력" size="5" max="100" required></td>
+				<td><input id="addbtn" type="button" value="추가"></td>
+			</tr>
+		</table><br>
+		
+		<table id="list" border="1" align="center">
+			<tr>
+				<th width="70px"> 이름 </th>
+				<th width="70px"> 점수 </th>
+				<td width="50px">&nbsp;</td>
+			</tr>
+			<tr>
+				<td> 이기자 </td>
+				<td> 70 </td>
+				<td><button id="delbtn">Del</button></td>
+			</tr>
+		</table>
+	</form>
+		
+	</div>
+</body>
+</html>

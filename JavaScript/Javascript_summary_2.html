@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// script의 실행 순서를 바꿔 기술하고 싶을 때 onload를 이용하여 문서 전체를 읽고 실행하게 한다.
+	// 이벤트를 연결합니다.
+	window.onload = function () {
+		/* // h1 태그의 배경 색상을 변경합니다.
+		document.querySelector('h1').style.backgroundColor = 'red';
+		
+		// h2 태그의 배경 색상을 변경합니다.
+		document.querySelector('h2').style.color = 'red';
+		
+		// 문서 객체를 선택합니다.
+		var header = document.getElementById('header');
+		
+		// 문서 객체를 조작합니다.
+		header.style.color = 'orange';
+		header.style.background = 'red';
+		header.innerHTML = 'From JavaScript';
+		 */
+	/********************************************************/
+		/* // 문서 객체를 선택합니다.
+		var headers = document.querySelectorAll('h1');
+		
+		for (let i=0; i<headers.length; i++) {
+			// 변수를 선언합니다.(배열로 저장)
+			var header = headers[i];
+			
+			// 문서 객체를 조작합니다.
+			header.style.color = 'orange';
+			header.style.background = 'red';
+			header.innerHTML = 'From JavaScript';
+		} */
+		
+	/********************************************************/
+		/* // 변수를 선언합니다.
+		var output = '';
+		for (var i=0; i<10; i++) {
+			output += '<h1>Header - ' + i + '</h1>'
+		}
+		
+		// 문서 객체 내부의 글자를 변경합니다.
+		document.body.innerHTML = output; */
+		
+	/********************************************************/
+		/* var selectedItem = document.getElementsByName("odd");
+		for (var i=0; i<selectedItem.length; i++) {
+			selectedItem.item(i).style.color = "red";
+		} */
+		
+	/********************************************************/
+		/* var output = '';
+		for (var i=0; i<256; i++) {
+			output += '<div></div>';
+		}
+		document.body.innerHTML = output;
+		
+		// 문서 객체를 선택합니다.
+		var divs = document.querySelectorAll('div');
+		for (var i=0; i<divs.length; i++) {
+			// 변수를 선언합니다.
+			var div = divs[i];
+			
+			// 스타일을 적용합니다.
+			div.style.height = '2px';
+			div.style.background = 'rgb(' + i + ',' + i + ',' + i + ')'
+		} */
+		
+	/********************************************************/
+		/* var image = document.getElementById('image');
+	
+		// 속성을 변경합니다.
+		image.src = '../daum.png';
+		imge.width = 300;
+		image.height = 200; */
+		
+	/********************************************************/	
+		// 속성을 지정합니다.
+		/* document.body.setAttribute('data-custom', 'value');
+	
+		// 속성을 추출합니다.
+		var dataCustom = document.body.getAttribute('data-custom');
+		alert(dataCustom); */
+		
+	/******** 시간 표시 ******************************************/	
+		// 변수를 선언합니다.
+		/* var clock = document.getElementById('clock');
+		
+	
+		// 1초마다 함수를 실행합니다.
+		res = setInterval(function () {
+			var now = new Date();
+			clock.innerHTML = now.toString();
+		}, 1000); */
+		
+	/********************************************************/
+		/* // HTML 문서의 모든 자식 노드 중에서 두 변째 노드의 이름을 선택함.
+		console.log(document.children);
+		document.getElementById("document").innerHTML = document.childNodes[1].nodeName;
+	
+		// html 노드의 모든 자식 노드 중에서 첫 번째 노드의 이름을 선택함.
+		console.log(document.children[0].children);
+		document.getElementById("html").innerHTML = document.childNodes[1].childNodes[0].nodeName; */
+	
+		
+	/********************************************************/
+		/* var headingText = document.getElementById("heading").firstChild.nodeValue;
+		
+		document.getElementById("text1").innerHTML = headingText;
+		document.getElementById("text2").firstChild.nodeValue = headingText; */
+		
+	/****** 이벤트 ******************************************/
+		//문서 객체를 선택합니다.
+		/* var button = document.getElementById('button');
+		
+		// 이벤트를 연결합니다.
+		button.onclick = function () {
+			alert('click');
+		} */
+		
+	};
+	/******************************************************/
+	window.onload = function (event) {
+		/* console.log("이 이벤트의 타입은 " + event.type + "이며, 이벤트의 대상은 " + event.target + "입니다.");
+		var btn = document.getElementById("btn");
+		btn.addEventListener("click", clickBtn);
+		function clickBtn(event) {
+			document.getElementById("text").innerHTML = 
+				"이 이벤트의 타입은 " + event.type + "이며, 이벤트의 대상은 " + event.target + "입니다.";
+		} */
+		
+	/******이벤트(버튼, 마우스)*****************************************/
+		/* var btn = document.getElementById("btn");
+		btn.addEventListener("click", clickBtn);
+		btn.addEventListener("mouseover", mouseoverBtn);
+		btn.addEventListener("mouseout", mouseoutBtn);
+		
+		function clickBtn() {
+			document.getElementById("text").innerHTML = "버튼이 클릭됐어요!";
+		}
+		function mouseoverBtn() {
+			document.getElementById("text").innerHTML = "버튼 위에 마우스가 있어요!";
+		}
+		function mouseoutBtn() {
+			document.getElementById("text").innerHTML = "버튼  밖으로 마우스가 나갔어요!";
+		} */	
+	}
+	
+	/****브라우저******************************************/
+	/* document.write("현재 문서의 URL 주소는 " + location.href + "입니다.<br>");
+	document.write("현재 문서의 호스트 이름은  " + location.hostname + "입니다.<br>");
+	document.write("현재 문서의 파일 경로명은 " + location.pathname + "입니다.<br>");
+	
+	var str = "location.href:" + location.href + "<br>";
+	str += "location.hostname:" + location.hostname + "<br>";
+	str += "location.pathname:" + location.pathname + "<br>";
+	alert(str);
+	// location.href = "http://www.daum.net"; */
+		
+		
+	/********* 브라우저 내장 객체 BOM ****************************************/
+	/* document.write("현재 사용자의 디스플레이 화면의 너비는  " + screen.width + "픽셀입니다.<br>");
+	document.write("현재 사용자의 디스플레이 화면의 높이는  " + screen.height + "픽셀입니다.<br>");
+	document.write("현재 사용자의 브라우저 창의 너비는  " + window.outerWidth + "픽셀입니다.<br>");
+	document.write("현재 사용자의 브라우저 창의 높이는  " + window.outerHeight + "픽셀입니다.<br>");
+	document.write("실제 사용할 수 있는 화면의 너비는  " + screen.availWidth + "픽셀입니다.<br>");
+	document.write("실제 사용할 수 있는 화면의 높이는  " + screen.availHeight + "픽셀입니다.<br>");
+
+	document.write("현재 사용 중인 브라우저의 이름은  " + navigator.appName + "입니다.<br>");
+	document.write("또한, 해당 브라우저의 코드명은  " + navigator.appCodeName + "입니다.<br>");
+	document.write("현재 사용 중인 브라우저의 버전 정보는  " + navigator.appVersion + "입니다.<br>");
+	document.write("userAgent 프로퍼티로 알 수 있는 추가 정보는  " + navigator.userAgent + "셀입니다.<br>");
+	document.write("현재 브라우저가 실행되고 있는 운영체제는  " + navigator.platform + "입니다.<br>"); */
+		
+	
+	/******************************************************/
+	/* var timeoutId;
+	
+	function startTimeout() {
+		timeoutId = setTimeout(printCurrentDate, 2000);
+	}
+	function cancelTimeout() {
+		clearTimeout(timeoutId);
+	}
+	function printCurrentDate() {
+		document.getElementById("date").innerHTML += new Date() + "<br>";
+	} */
+	
+		
+		
+	var res;
+	function timeStop() {
+		clearInterval(res);
+	}
+	
+</script>
+</head>
+<body>
+	<h1>Process - 1</h1>
+	<h2>Process - 2</h2>
+	
+	<h1 id="header">Header</h1>
+	
+	<h1>HTML 태그 이름을 이용한 선택</h1>
+	<ul>
+		<li class="odd">첫 번째 아이템입니다!</li>
+		<li>두 번째 아이템입니다!</li>
+		<li class="odd">세 번째 아이템입니다!</li>
+		<li>네 번째 아이템입니다!</li>
+		<li class="odd">다섯 번째 아이템입니다!</li>
+	</ul>
+	
+	<img id="image">
+	
+	<h1 id="clock"></h1>
+	<input type="button" onclick="timeStop()" value="시간정지">
+	
+	<h1>nodeName 프로퍼티</h1>
+	<p id="document"></p>
+	<p id="html"></p>
+	
+	<h1 id="heading">nodeValue 프로퍼티</h1>
+	<p id="text1">텍스트</p>
+	<p id="text2">텍스트</p>
+	
+	<h1>이벤트 객체</h1>
+	<button id="btn">눌러보세요!</button>
+	<p id="text"></p>
+	
+	<h1>clearTimeout() 메소드</h1>
+	<button onclick="startTimeout()">2초 뒤에 현재 시간을 표시합니다.</button>
+	<button onclick="cancelTimeout()">시간 표시 취소!</button>
+	<p id="date"></p>
+
+</body>
+</html>
