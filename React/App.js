@@ -3,6 +3,9 @@ import './register.css';
 import React from 'react';  // function 기반
 // import React, { Component } from 'react'; // 클래스 기반
 import MyComponent from './MyComponent';
+import EventPractice from './EventPractice';
+import EventPractice2 from './EventPractice2';
+import EventPractice3 from './EventPractice3';
 
 function App() {
   // const name = "react";
@@ -129,8 +132,8 @@ function App() {
   //   return <MyComponent name="React" />;
   // };
 
-  return <MyComponent /*name="React"*/ name2="리액트"></MyComponent>;
-
+  // return <MyComponent name="React!!!" name2="리액트" favoriteNumber={1}>리엑트</MyComponent>;
+  return (<EventPractice />);
 }
 
 
