@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
+// import React, { useState } from 'react';    // 함수 형식
 
-class EventPractice2 extends Component {
+class EventPractice4 extends Component {
+    constructor(props) {
+        super(props);
+        this.inputRefs = [
+            React.createRef(),
+            React.createRef(),
+            React.createRef(),
+            React.createRef(),
+            React.createRef(),
+        ];
+    }
+
     state = {
         username: '',
         password: '',
@@ -24,17 +36,25 @@ class EventPractice2 extends Component {
 
         this.setState({
             username: '',
-            passward: '',
+            password: '',
             email: '',
             tel: ''
         });
     }
+
+    handleSubmit = (e, index) => {
+        e.preventDefault();
+        if (this.inputRefs[index + 1]) {
+            this.inputRefs[index + 1].current.focus();
+        }
+    };
 
     render() {
         return (
             <div>
                 <center>
                     <h1>회원 가입</h1>
+                    <h3>(enter를 입력하면 다음 입력란으로 이동)</h3>
                 </center>
 
                 <table border="1" align="center">
@@ -47,6 +67,8 @@ class EventPractice2 extends Component {
                                 placeholder="아이디"
                                 value={this.state.username}
                                 onChange={this.handleChange}
+                                ref={this.inputRefs[0]}
+                                onKeyDown={(e) => e.key === 'Enter' && this.handleSubmit(e, 0)}
                             />
                         </td>
                     </tr>
@@ -60,6 +82,8 @@ class EventPractice2 extends Component {
                                 placeholder="비밀번호"
                                 value={this.state.password}
                                 onChange={this.handleChange}
+                                ref={this.inputRefs[1]}
+                                onKeyDown={(e) => e.key === 'Enter' && this.handleSubmit(e, 1)}
                             />
                         </td>
                     </tr>
@@ -73,6 +97,8 @@ class EventPractice2 extends Component {
                                 placeholder="이메일"
                                 value={this.state.email}
                                 onChange={this.handleChange}
+                                ref={this.inputRefs[2]}
+                                onKeyDown={(e) => e.key === 'Enter' && this.handleSubmit(e, 2)}
                             />
                         </td>
                     </tr>
@@ -86,13 +112,19 @@ class EventPractice2 extends Component {
                                 placeholder="전화번호"
                                 value={this.state.tel}
                                 onChange={this.handleChange}
+                                ref={this.inputRefs[3]}
+                                onKeyDown={(e) => e.key === 'Enter' && this.handleSubmit(e, 3)}
                             />
                         </td>
                     </tr>
 
                     <tr>
                         <td colSpan="2" align="center">
-                            <button onClick={this.handleClick} >확인</button>
+                            <button
+                                ref={this.inputRefs[4]}
+                                onClick={this.handleClick}
+
+                            >확인</button>
                         </td>
                     </tr>
                 </table>
@@ -100,7 +132,6 @@ class EventPractice2 extends Component {
             </div>
         );
     }
-
 }
 
-export default EventPractice2;
+export default EventPractice4;
